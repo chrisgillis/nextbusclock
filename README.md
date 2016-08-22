@@ -14,6 +14,7 @@ Project files for a hardware display that shows bus prediction times from NextBu
 ## Component List
 
 * 1x ATMEGA328 Microcontroller
+* 1x DIP Socket DIP-28 .3" Wide
 * 2x 74HC595 Shift Register
 * 2x Common Cathode 7 Segment Display
 * 1x LM7805 5v Linear Regulator
