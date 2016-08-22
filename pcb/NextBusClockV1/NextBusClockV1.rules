@@ -1,0 +1,85 @@
+
+(rules PCB NextBusClockV1
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1884)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.6)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 250.2 (type default_"kicad_default"))
+    (clear 50.0 (type smd_smd))
+    (clear 250.2 (type smd_"kicad_default"))
+    (clear 250.2 (type "kicad_default"_"kicad_default"))
+  )
+  (padstack "Via[0-1]_600:400_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:400_um" "Via[0-1]_600:400_um" default
+  )
+  (via 
+    "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_600:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND VCC "/5V_PWR" "/33V_PWR" "Net-(C5-Pad2)" "Net-(C6-Pad2)" "Net-(D1-Pad2)" "Net-(DIG1-Pad1)"
+    "Net-(DIG1-Pad2)" "Net-(DIG1-Pad3)" "Net-(DIG1-Pad4)" "Net-(DIG1-Pad5)" "Net-(DIG1-Pad6)" "Net-(DIG1-Pad7)" "Net-(DIG1-Pad8)" "Net-(DIG1-Pad9)"
+    "Net-(DIG1-Pad10)" "Net-(DIG2-Pad1)" "Net-(DIG2-Pad2)" "Net-(DIG2-Pad3)" "Net-(DIG2-Pad4)" "Net-(DIG2-Pad5)" "Net-(DIG2-Pad6)" "Net-(DIG2-Pad7)"
+    "Net-(DIG2-Pad8)" "Net-(DIG2-Pad9)" "Net-(DIG2-Pad10)" "/ESP_TX" "Net-(ESP1-Pad4)" "Net-(ESP1-Pad5)" "Net-(ESP1-Pad6)" "/ESP_RX"
+    "Net-(IC1-Pad1)" "Net-(IC1-Pad4)" "Net-(IC1-Pad5)" "Net-(IC1-Pad6)" "Net-(IC1-Pad11)" "Net-(IC1-Pad12)" "Net-(IC1-Pad13)" "/SR_LATCH"
+    "Net-(IC1-Pad15)" "Net-(IC1-Pad16)" "/SR_DATA" "/SR_CLOCK" "Net-(IC1-Pad19)" "Net-(IC1-Pad23)" "Net-(IC1-Pad24)" "Net-(IC1-Pad25)"
+    "Net-(IC1-Pad26)" "Net-(IC1-Pad27)" "Net-(IC1-Pad28)" "Net-(SR1-Pad7)" "Net-(SR2-Pad7)" "Net-(SR2-Pad9)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
